@@ -30,7 +30,6 @@
         {
             containerForm = new FlowLayoutPanel();
             containerLogin = new FlowLayoutPanel();
-            pictureBox1 = new PictureBox();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -45,14 +44,15 @@
             flowLayoutPanel3 = new FlowLayoutPanel();
             label5 = new Label();
             labelRegister = new Label();
+            pictureBox1 = new PictureBox();
             containerForm.SuspendLayout();
             containerLogin.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             flowLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // containerForm
@@ -81,18 +81,6 @@
             containerLogin.Padding = new Padding(50, 40, 50, 40);
             containerLogin.Size = new Size(333, 439);
             containerLogin.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.BackgroundImage = Properties.Resources.Influencer_Marketing;
-            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Location = new Point(342, 3);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(377, 439);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 1;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
             // 
             // label1
             // 
@@ -248,10 +236,23 @@
             labelRegister.TabIndex = 9;
             labelRegister.Text = "Regsitrate";
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImage = Properties.Resources.Influencer_Marketing;
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Location = new Point(342, 3);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(377, 439);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             ClientSize = new Size(722, 442);
             Controls.Add(containerForm);
             Name = "LoginForm";
@@ -260,7 +261,6 @@
             containerForm.ResumeLayout(false);
             containerLogin.ResumeLayout(false);
             containerLogin.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             flowLayoutPanel1.ResumeLayout(false);
             flowLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
@@ -269,6 +269,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             flowLayoutPanel3.ResumeLayout(false);
             flowLayoutPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
