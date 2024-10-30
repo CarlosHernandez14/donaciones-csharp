@@ -73,6 +73,16 @@ namespace DonacionesCreadores.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_publicaciones {
+            get {
+                object obj = ResourceManager.GetObject("icon-publicaciones", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Influencer_Marketing {
             get {
                 object obj = ResourceManager.GetObject("Influencer Marketing", resourceCulture);
