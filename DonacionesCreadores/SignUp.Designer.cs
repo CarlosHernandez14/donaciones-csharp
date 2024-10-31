@@ -32,6 +32,10 @@
             containerLogin = new FlowLayoutPanel();
             label1 = new Label();
             label2 = new Label();
+            label6 = new Label();
+            flowLayoutPanel4 = new FlowLayoutPanel();
+            fieldName = new TextBox();
+            pictureBox4 = new PictureBox();
             label3 = new Label();
             flowLayoutPanel1 = new FlowLayoutPanel();
             fieldEmail = new TextBox();
@@ -40,33 +44,29 @@
             flowLayoutPanel2 = new FlowLayoutPanel();
             fieldPassword = new TextBox();
             pictureBox3 = new PictureBox();
+            label7 = new Label();
+            flowLayoutPanel5 = new FlowLayoutPanel();
+            fieldConfirmPassword = new TextBox();
+            pictureBox5 = new PictureBox();
+            label8 = new Label();
+            comboInfluencer = new ComboBox();
             btnRegister = new Button();
             flowLayoutPanel3 = new FlowLayoutPanel();
             label5 = new Label();
             btnLogin = new Label();
             pictureBox1 = new PictureBox();
-            flowLayoutPanel4 = new FlowLayoutPanel();
-            fieldName = new TextBox();
-            pictureBox4 = new PictureBox();
-            label6 = new Label();
-            flowLayoutPanel5 = new FlowLayoutPanel();
-            fieldConfirmPassword = new TextBox();
-            pictureBox5 = new PictureBox();
-            label7 = new Label();
-            comboInfluencer = new ComboBox();
-            label8 = new Label();
             containerForm.SuspendLayout();
             containerLogin.SuspendLayout();
+            flowLayoutPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            flowLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            flowLayoutPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             flowLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            flowLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // containerForm
@@ -130,6 +130,45 @@
             label2.TabIndex = 1;
             label2.Text = "Iniciar sesion";
             label2.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Location = new Point(53, 135);
+            label6.Name = "label6";
+            label6.Size = new Size(58, 17);
+            label6.TabIndex = 9;
+            label6.Text = "Nombre";
+            label6.Click += label6_Click;
+            // 
+            // flowLayoutPanel4
+            // 
+            flowLayoutPanel4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            flowLayoutPanel4.Controls.Add(fieldName);
+            flowLayoutPanel4.Controls.Add(pictureBox4);
+            flowLayoutPanel4.Location = new Point(53, 155);
+            flowLayoutPanel4.Name = "flowLayoutPanel4";
+            flowLayoutPanel4.Size = new Size(219, 31);
+            flowLayoutPanel4.TabIndex = 8;
+            // 
+            // fieldName
+            // 
+            fieldName.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            fieldName.Location = new Point(3, 3);
+            fieldName.Name = "fieldName";
+            fieldName.Size = new Size(175, 23);
+            fieldName.TabIndex = 0;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Image = Properties.Resources.password;
+            pictureBox4.Location = new Point(184, 3);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(31, 23);
+            pictureBox4.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox4.TabIndex = 1;
+            pictureBox4.TabStop = false;
             // 
             // label3
             // 
@@ -207,6 +246,63 @@
             pictureBox3.TabIndex = 1;
             pictureBox3.TabStop = false;
             // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.Location = new Point(53, 297);
+            label7.Name = "label7";
+            label7.Size = new Size(143, 17);
+            label7.TabIndex = 11;
+            label7.Text = "Confirmar Contrasena";
+            // 
+            // flowLayoutPanel5
+            // 
+            flowLayoutPanel5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            flowLayoutPanel5.Controls.Add(fieldConfirmPassword);
+            flowLayoutPanel5.Controls.Add(pictureBox5);
+            flowLayoutPanel5.Location = new Point(53, 317);
+            flowLayoutPanel5.Name = "flowLayoutPanel5";
+            flowLayoutPanel5.Size = new Size(219, 31);
+            flowLayoutPanel5.TabIndex = 10;
+            // 
+            // fieldConfirmPassword
+            // 
+            fieldConfirmPassword.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            fieldConfirmPassword.Location = new Point(3, 3);
+            fieldConfirmPassword.Name = "fieldConfirmPassword";
+            fieldConfirmPassword.Size = new Size(175, 23);
+            fieldConfirmPassword.TabIndex = 0;
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.Image = Properties.Resources.password;
+            pictureBox5.Location = new Point(184, 3);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(31, 23);
+            pictureBox5.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox5.TabIndex = 1;
+            pictureBox5.TabStop = false;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.Location = new Point(53, 351);
+            label8.Name = "label8";
+            label8.Size = new Size(105, 17);
+            label8.TabIndex = 13;
+            label8.Text = "Eres influencer?";
+            // 
+            // comboInfluencer
+            // 
+            comboInfluencer.FormattingEnabled = true;
+            comboInfluencer.Items.AddRange(new object[] { "Usuario", "CreadorContenido" });
+            comboInfluencer.Location = new Point(53, 371);
+            comboInfluencer.Name = "comboInfluencer";
+            comboInfluencer.Size = new Size(219, 23);
+            comboInfluencer.TabIndex = 12;
+            // 
             // btnRegister
             // 
             btnRegister.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
@@ -256,6 +352,7 @@
             btnLogin.Size = new Size(94, 20);
             btnLogin.TabIndex = 9;
             btnLogin.Text = "Inicia sesion";
+            btnLogin.Click += btnLogin_Click;
             // 
             // pictureBox1
             // 
@@ -267,102 +364,6 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
-            // 
-            // flowLayoutPanel4
-            // 
-            flowLayoutPanel4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            flowLayoutPanel4.Controls.Add(fieldName);
-            flowLayoutPanel4.Controls.Add(pictureBox4);
-            flowLayoutPanel4.Location = new Point(53, 155);
-            flowLayoutPanel4.Name = "flowLayoutPanel4";
-            flowLayoutPanel4.Size = new Size(219, 31);
-            flowLayoutPanel4.TabIndex = 8;
-            // 
-            // fieldName
-            // 
-            fieldName.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            fieldName.Location = new Point(3, 3);
-            fieldName.Name = "fieldName";
-            fieldName.Size = new Size(175, 23);
-            fieldName.TabIndex = 0;
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.Image = Properties.Resources.password;
-            pictureBox4.Location = new Point(184, 3);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(31, 23);
-            pictureBox4.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox4.TabIndex = 1;
-            pictureBox4.TabStop = false;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(53, 135);
-            label6.Name = "label6";
-            label6.Size = new Size(58, 17);
-            label6.TabIndex = 9;
-            label6.Text = "Nombre";
-            label6.Click += label6_Click;
-            // 
-            // flowLayoutPanel5
-            // 
-            flowLayoutPanel5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            flowLayoutPanel5.Controls.Add(fieldConfirmPassword);
-            flowLayoutPanel5.Controls.Add(pictureBox5);
-            flowLayoutPanel5.Location = new Point(53, 317);
-            flowLayoutPanel5.Name = "flowLayoutPanel5";
-            flowLayoutPanel5.Size = new Size(219, 31);
-            flowLayoutPanel5.TabIndex = 10;
-            // 
-            // fieldConfirmPassword
-            // 
-            fieldConfirmPassword.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            fieldConfirmPassword.Location = new Point(3, 3);
-            fieldConfirmPassword.Name = "fieldConfirmPassword";
-            fieldConfirmPassword.Size = new Size(175, 23);
-            fieldConfirmPassword.TabIndex = 0;
-            // 
-            // pictureBox5
-            // 
-            pictureBox5.Image = Properties.Resources.password;
-            pictureBox5.Location = new Point(184, 3);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(31, 23);
-            pictureBox5.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox5.TabIndex = 1;
-            pictureBox5.TabStop = false;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(53, 297);
-            label7.Name = "label7";
-            label7.Size = new Size(143, 17);
-            label7.TabIndex = 11;
-            label7.Text = "Confirmar Contrasena";
-            // 
-            // comboInfluencer
-            // 
-            comboInfluencer.FormattingEnabled = true;
-            comboInfluencer.Items.AddRange(new object[] { "Usuario", "CreadorContenido" });
-            comboInfluencer.Location = new Point(53, 371);
-            comboInfluencer.Name = "comboInfluencer";
-            comboInfluencer.Size = new Size(219, 23);
-            comboInfluencer.TabIndex = 12;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(53, 351);
-            label8.Name = "label8";
-            label8.Size = new Size(105, 17);
-            label8.TabIndex = 13;
-            label8.Text = "Eres influencer?";
             // 
             // SignUp
             // 
@@ -376,21 +377,21 @@
             containerForm.ResumeLayout(false);
             containerLogin.ResumeLayout(false);
             containerLogin.PerformLayout();
+            flowLayoutPanel4.ResumeLayout(false);
+            flowLayoutPanel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             flowLayoutPanel1.ResumeLayout(false);
             flowLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             flowLayoutPanel2.ResumeLayout(false);
             flowLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            flowLayoutPanel3.ResumeLayout(false);
-            flowLayoutPanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            flowLayoutPanel4.ResumeLayout(false);
-            flowLayoutPanel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             flowLayoutPanel5.ResumeLayout(false);
             flowLayoutPanel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            flowLayoutPanel3.ResumeLayout(false);
+            flowLayoutPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 

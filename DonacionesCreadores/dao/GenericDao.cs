@@ -6,6 +6,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Text.Json.Serialization;
+using System.Diagnostics;
 
 namespace DonacionesCreadores.dao
 {
@@ -38,7 +39,7 @@ namespace DonacionesCreadores.dao
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error al obtener los archivos de la base de datos" + e.Message);
+                Debug.WriteLine("Error al obtener los archivos de la base de datos" + e.Message);
                 return new List<T>();
             }
         }
@@ -53,7 +54,7 @@ namespace DonacionesCreadores.dao
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error al guardar los archivos en la base de datos");
+                Debug.WriteLine("Error al guardar los archivos en la base de datos");
                 throw new IOException(e.Message);
             }
         }

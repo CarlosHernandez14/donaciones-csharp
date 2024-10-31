@@ -9,8 +9,8 @@ namespace DonacionesCreadores.clases
     [Serializable]
     public class Administrador : Usuario
     {
-        public Administrador(string nombre, string email, string contrasena)
-            : base(nombre, email, contrasena)
+        public Administrador(string id, string nombre, string email, string contrasena)
+            : base(id, nombre, email, contrasena)
         {
         }
 

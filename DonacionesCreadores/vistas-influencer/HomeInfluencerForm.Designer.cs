@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            label1 = new Label();
             btnPublicaciones = new Button();
+            label1 = new Label();
             panel2 = new Panel();
             btnAddContent = new Button();
             containerPosts = new FlowLayoutPanel();
@@ -48,17 +48,6 @@
             panel1.Size = new Size(225, 526);
             panel1.TabIndex = 0;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(35, 58);
-            label1.Name = "label1";
-            label1.Size = new Size(150, 30);
-            label1.TabIndex = 0;
-            label1.Text = "Instafluencers";
-            // 
             // btnPublicaciones
             // 
             btnPublicaciones.BackColor = Color.Orange;
@@ -73,6 +62,17 @@
             btnPublicaciones.TabIndex = 1;
             btnPublicaciones.Text = "Publicaciones";
             btnPublicaciones.UseVisualStyleBackColor = false;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(35, 58);
+            label1.Name = "label1";
+            label1.Size = new Size(150, 30);
+            label1.TabIndex = 0;
+            label1.Text = "Instafluencers";
             // 
             // panel2
             // 
@@ -93,6 +93,7 @@
             btnAddContent.TabIndex = 0;
             btnAddContent.Text = "Agregar contenido +";
             btnAddContent.UseVisualStyleBackColor = false;
+            btnAddContent.Click += btnAddContent_Click;
             // 
             // containerPosts
             // 

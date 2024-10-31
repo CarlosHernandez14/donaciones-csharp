@@ -1,6 +1,7 @@
 ﻿using DonacionesCreadores.clases;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -17,6 +18,12 @@ namespace DonacionesCreadores.dao
         {
             var usuarioDao = new GenericDao<Usuario>("usuario.json");
             List<Usuario> usuarios = usuarioDao.Cargar();
+            // Imprimimos los usuarios cargados
+            Debug.WriteLine("Usuarios:");
+            foreach (var u in usuarios)
+            {
+                Debug.WriteLine(u.ToString());
+            }
 
             foreach (var usuario in usuarios)
             {
@@ -30,6 +37,13 @@ namespace DonacionesCreadores.dao
             var creadorContenidoDao = new GenericDao<CreadorContenido>("creadorContenido.json");
             List<CreadorContenido> creadoresContenido = creadorContenidoDao.Cargar();
 
+            // Imprimimos los creadores de contenido cargados
+            Debug.WriteLine("Creadores de contenido:");
+            foreach (var c in creadoresContenido)
+            {
+                Debug.WriteLine(c.ToString());
+            }
+
             foreach (var creador in creadoresContenido)
             {
                 if (creador.Correo == correo && creador.Contrasena == Sha1Encrypt(contrasena))
@@ -41,6 +55,13 @@ namespace DonacionesCreadores.dao
             // Verificación en administradores
             var administradorDao = new GenericDao<Administrador>("administrador.json");
             List<Administrador> administradores = administradorDao.Cargar();
+
+            // Imprimimos los administradores cargados
+            Debug.WriteLine("Administradores:");
+            foreach (var a in administradores)
+            {
+                Debug.WriteLine(a.ToString());
+            }
 
             foreach (var admin in administradores)
             {
@@ -66,11 +87,19 @@ namespace DonacionesCreadores.dao
         // Método para guardar un creador de contenido
         public static void GuardarCreadorContenido(CreadorContenido creadorContenido)
         {
-            var creadorDao = new GenericDao<CreadorContenido>("creadorContenido.json");
-            List<CreadorContenido> creadores = creadorDao.Cargar();
-            creadorContenido.Contrasena = Sha1Encrypt(creadorContenido.Contrasena);
-            creadores.Add(creadorContenido);
-            creadorDao.Guardar(creadores);
+            try
+            {
+                var creadorDao = new GenericDao<CreadorContenido>("creadorContenido.json");
+                List<CreadorContenido> creadores = creadorDao.Cargar();
+                creadorContenido.Contrasena = Sha1Encrypt(creadorContenido.Contrasena);
+                creadores.Add(creadorContenido);
+                creadorDao.Guardar(creadores);
+            } catch (Exception e)
+            {
+                Debug.WriteLine("Error al guardar el creador de contenido: " + e.Message);
+                // Propagamos la excepción
+                throw new Exception(e.Message);
+            }
         }
 
         // Método para obtener un creador de contenido por ID

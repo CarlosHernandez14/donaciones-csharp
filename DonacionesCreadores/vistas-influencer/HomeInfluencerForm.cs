@@ -16,5 +16,14 @@ namespace DonacionesCreadores.vistas_influencer
         {
             InitializeComponent();
         }
+
+        private void btnAddContent_Click(object sender, EventArgs e)
+        {
+            // Abrimos la ventana de agregar contenido
+            CreatePostForm createPostForm = new CreatePostForm();
+
+            // Mostramos la ventana
+            createPostForm.ShowDialog();
+        }
     }
 }
