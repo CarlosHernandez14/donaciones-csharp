@@ -21,6 +21,15 @@ namespace DonacionesCreadores.clases
         public double Donaciones { get; private set; }
         public string ImagePath { get; set; }
 
+        // Constructro vacio para serializacion
+        public Contenido() : base()
+        {
+            Visualizaciones = new List<Visualizacion>();
+            Likes = new List<Like>();
+            Comentarios = new List<string>();
+            Donaciones = 0.0;
+        }
+
         public Contenido(string titulo, string descripcion, string idCreador, string imagePath)
         {
             Titulo = titulo;

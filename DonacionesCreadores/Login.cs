@@ -60,8 +60,10 @@ namespace DonacionesCreadores
                 }
                 else if (usuario is CreadorContenido)
                 {
+                    // Parseamos el usuario a CreadorContenido
+                    CreadorContenido creadorContenido = (CreadorContenido)usuario;
                     // Abrir el formulario de creador de contenido
-                    HomeInfluencerForm homeInfluencerForm = new HomeInfluencerForm();
+                    HomeInfluencerForm homeInfluencerForm = new HomeInfluencerForm(creadorContenido);
                     homeInfluencerForm.Show();
                     // Cerrar el formulario actual
                     this.Hide();

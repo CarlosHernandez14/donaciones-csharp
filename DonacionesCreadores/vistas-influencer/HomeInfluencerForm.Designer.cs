@@ -97,6 +97,7 @@
             // 
             // containerPosts
             // 
+            containerPosts.AutoScroll = true;
             containerPosts.Location = new Point(231, 78);
             containerPosts.Name = "containerPosts";
             containerPosts.Size = new Size(686, 448);
@@ -112,6 +113,7 @@
             Controls.Add(panel1);
             Name = "HomeInfluencerForm";
             Text = "HomeInfluencerForm";
+            Load += HomeInfluencerForm_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);

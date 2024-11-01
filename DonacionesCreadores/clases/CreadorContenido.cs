@@ -15,6 +15,7 @@ namespace DonacionesCreadores.clases
         public bool CuentaBloqueada { get; set; }
         public List<string> Suscriptores { get; set; } // Guarda el id de los usuarios suscritos
 
+        // Constructor vacío para serialización
         public CreadorContenido() : base()
         {
             Contenidos = new List<Contenido>();

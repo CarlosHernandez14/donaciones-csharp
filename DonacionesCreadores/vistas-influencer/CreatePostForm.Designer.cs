@@ -32,9 +32,9 @@
             label1 = new Label();
             pictureBox1 = new PictureBox();
             labelTittle = new Label();
-            textBox1 = new TextBox();
+            fieldTittle = new TextBox();
             label2 = new Label();
-            textBox2 = new TextBox();
+            fieldDescripcion = new TextBox();
             label3 = new Label();
             btnSelectFile = new Button();
             openFileDialog1 = new OpenFileDialog();
@@ -86,13 +86,13 @@
             labelTittle.TabIndex = 2;
             labelTittle.Text = "Titulo";
             // 
-            // textBox1
+            // fieldTittle
             // 
-            textBox1.Location = new Point(176, 145);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(247, 41);
-            textBox1.TabIndex = 3;
+            fieldTittle.Location = new Point(176, 145);
+            fieldTittle.Multiline = true;
+            fieldTittle.Name = "fieldTittle";
+            fieldTittle.Size = new Size(247, 41);
+            fieldTittle.TabIndex = 3;
             // 
             // label2
             // 
@@ -104,14 +104,14 @@
             label2.TabIndex = 4;
             label2.Text = "Descripion";
             // 
-            // textBox2
+            // fieldDescripcion
             // 
-            textBox2.Location = new Point(176, 211);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.ScrollBars = ScrollBars.Vertical;
-            textBox2.Size = new Size(247, 41);
-            textBox2.TabIndex = 5;
+            fieldDescripcion.Location = new Point(176, 211);
+            fieldDescripcion.Multiline = true;
+            fieldDescripcion.Name = "fieldDescripcion";
+            fieldDescripcion.ScrollBars = ScrollBars.Vertical;
+            fieldDescripcion.Size = new Size(247, 41);
+            fieldDescripcion.TabIndex = 5;
             // 
             // label3
             // 
@@ -134,6 +134,7 @@
             btnSelectFile.TabIndex = 7;
             btnSelectFile.Text = "Seleccionar";
             btnSelectFile.UseVisualStyleBackColor = true;
+            btnSelectFile.Click += btnSelectFile_Click;
             // 
             // openFileDialog1
             // 
@@ -144,6 +145,7 @@
             pictureBoxPreview.Location = new Point(22, 336);
             pictureBoxPreview.Name = "pictureBoxPreview";
             pictureBoxPreview.Size = new Size(225, 158);
+            pictureBoxPreview.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxPreview.TabIndex = 8;
             pictureBoxPreview.TabStop = false;
             // 
@@ -171,6 +173,7 @@
             btnAddContent.TabIndex = 10;
             btnAddContent.Text = "Agregar contenido";
             btnAddContent.UseVisualStyleBackColor = false;
+            btnAddContent.Click += btnAddContent_Click;
             // 
             // CreatePostForm
             // 
@@ -183,9 +186,9 @@
             Controls.Add(pictureBoxPreview);
             Controls.Add(btnSelectFile);
             Controls.Add(label3);
-            Controls.Add(textBox2);
+            Controls.Add(fieldDescripcion);
             Controls.Add(label2);
-            Controls.Add(textBox1);
+            Controls.Add(fieldTittle);
             Controls.Add(labelTittle);
             Controls.Add(pictureBox1);
             Controls.Add(panel1);
@@ -205,9 +208,9 @@
         private Label label1;
         private PictureBox pictureBox1;
         private Label labelTittle;
-        private TextBox textBox1;
+        private TextBox fieldTittle;
         private Label label2;
-        private TextBox textBox2;
+        private TextBox fieldDescripcion;
         private Label label3;
         private Button btnSelectFile;
         private OpenFileDialog openFileDialog1;
