@@ -97,6 +97,8 @@
             // 
             // panel2
             // 
+            panel2.AccessibleRole = AccessibleRole.IpAddress;
+            panel2.BackColor = SystemColors.Control;
             panel2.Controls.Add(btnAddContent);
             panel2.Location = new Point(225, 0);
             panel2.Name = "panel2";
@@ -128,19 +130,20 @@
             // 
             contextMenuStrip1.Items.AddRange(new ToolStripItem[] { cerrarSesionToolStripMenuItem });
             contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(181, 48);
+            contextMenuStrip1.Size = new Size(143, 26);
             contextMenuStrip1.ItemClicked += contextMenuStrip1_ItemClicked;
             // 
             // cerrarSesionToolStripMenuItem
             // 
             cerrarSesionToolStripMenuItem.Name = "cerrarSesionToolStripMenuItem";
-            cerrarSesionToolStripMenuItem.Size = new Size(180, 22);
+            cerrarSesionToolStripMenuItem.Size = new Size(142, 22);
             cerrarSesionToolStripMenuItem.Text = "Cerrar sesion";
             // 
             // HomeInfluencerForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             ClientSize = new Size(916, 525);
             Controls.Add(containerPosts);
             Controls.Add(panel2);
