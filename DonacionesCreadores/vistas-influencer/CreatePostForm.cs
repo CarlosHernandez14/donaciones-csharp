@@ -71,6 +71,9 @@ namespace DonacionesCreadores.vistas_influencer
 
                 System.IO.File.Copy(this.imagePath, destPath, true);
 
+                // Actualizamos la interfaz
+                homeInfluencerForm.LoadContent();
+
                 // Mostramos un mensaje de éxito
                 MessageBox.Show("Contenido creado con éxito");
 

@@ -60,18 +60,28 @@ namespace DonacionesCreadores.vistas_influencer
                     UserControlContenido userControlContenido = new()
                     {
                         // Asignamos los valores
+                        Id = contenido.Id,
                         Titulo = contenido.Titulo,
                         Descripcion = contenido.Descripcion,
                         ImagePath = contenido.ImagePath,
-                        Influencer = influencer,
-                        HomeInfluencerForm = this
+                        IdCreador = contenido.IdCreador,
+                        Donaciones = contenido.Donaciones,
+                        LikeList = contenido.Likes,
+                        VisualizacionesList = contenido.Visualizaciones,
+                        CommentsList = contenido.Comentarios,
+                        HomeInfluencerForm = this,
+                        Usuario = influencer
                     };
 
                     // Agregamos el control al flowLayoutPanel
                     containerPosts.Controls.Add(userControlContenido);
                 }
 
-            }catch(Exception ex)
+                // Refrescamos el contenedor
+                //containerPosts.Refresh();
+
+            }
+            catch (Exception ex)
             {
                 Debug.WriteLine("Error al cargar los contenidos: " + ex.Message);
                 MessageBox.Show("Error al cargar los contenidos");

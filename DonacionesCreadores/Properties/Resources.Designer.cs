@@ -103,6 +103,16 @@ namespace DonacionesCreadores.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_like {
+            get {
+                object obj = ResourceManager.GetObject("icon-like", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_nolikeado {
             get {
                 object obj = ResourceManager.GetObject("icon-nolikeado", resourceCulture);

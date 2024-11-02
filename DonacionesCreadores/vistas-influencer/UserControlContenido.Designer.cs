@@ -94,6 +94,7 @@
             btnSuscribe.TabIndex = 2;
             btnSuscribe.Text = "Suscribirse";
             btnSuscribe.UseVisualStyleBackColor = false;
+            btnSuscribe.Click += btnSuscribe_Click;
             // 
             // panel1
             // 
@@ -164,22 +165,23 @@
             btnLike.ImageAlign = ContentAlignment.MiddleLeft;
             btnLike.Location = new Point(3, 8);
             btnLike.Name = "btnLike";
-            btnLike.Size = new Size(77, 47);
+            btnLike.Size = new Size(95, 47);
             btnLike.TabIndex = 0;
             btnLike.Text = "Like";
             btnLike.TextAlign = ContentAlignment.MiddleRight;
             btnLike.UseVisualStyleBackColor = true;
+            btnLike.Click += btnLike_Click;
             // 
             // btnComment
             // 
             btnComment.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnComment.Image = Properties.Resources.icon_comentar;
             btnComment.ImageAlign = ContentAlignment.MiddleLeft;
-            btnComment.Location = new Point(86, 8);
+            btnComment.Location = new Point(104, 8);
             btnComment.Name = "btnComment";
-            btnComment.Size = new Size(113, 47);
+            btnComment.Size = new Size(151, 47);
             btnComment.TabIndex = 1;
-            btnComment.Text = "Comentar";
+            btnComment.Text = "Comentarios(0)";
             btnComment.TextAlign = ContentAlignment.MiddleRight;
             btnComment.UseVisualStyleBackColor = true;
             // 
@@ -188,12 +190,13 @@
             btnVer.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnVer.ForeColor = Color.DarkOrange;
             btnVer.ImageAlign = ContentAlignment.MiddleLeft;
-            btnVer.Location = new Point(205, 8);
+            btnVer.Location = new Point(261, 8);
             btnVer.Name = "btnVer";
             btnVer.Size = new Size(77, 47);
             btnVer.TabIndex = 2;
             btnVer.Text = "Ver";
             btnVer.UseVisualStyleBackColor = true;
+            btnVer.Click += btnVer_Click;
             // 
             // btnDonar
             // 
@@ -201,13 +204,14 @@
             btnDonar.ForeColor = Color.DarkOrange;
             btnDonar.Image = Properties.Resources.icon_donar;
             btnDonar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnDonar.Location = new Point(288, 8);
+            btnDonar.Location = new Point(344, 8);
             btnDonar.Name = "btnDonar";
             btnDonar.Size = new Size(92, 47);
             btnDonar.TabIndex = 3;
             btnDonar.Text = "Donar";
             btnDonar.TextAlign = ContentAlignment.MiddleRight;
             btnDonar.UseVisualStyleBackColor = true;
+            btnDonar.Click += btnDonar_Click;
             // 
             // UserControlContenido
             // 
@@ -221,6 +225,7 @@
             Controls.Add(flowLayoutPanel1);
             Name = "UserControlContenido";
             Size = new Size(479, 521);
+            Load += UserControlContenido_Load;
             flowLayoutPanel1.ResumeLayout(false);
             flowLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

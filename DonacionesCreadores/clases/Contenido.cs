@@ -11,23 +11,20 @@ namespace DonacionesCreadores.clases
     [Serializable]
     public class Contenido
     {
-        public string Id { get; private set; }
+        public string Id { get; set; }
         public string Titulo { get; set; }
         public string Descripcion { get; set; }
-        public string IdCreador { get; private set; }
+        public string IdCreador { get; set; }
         public List<Visualizacion> Visualizaciones { get; set; }
         public List<Like> Likes { get; set; }
         public List<string> Comentarios { get; set; }
-        public double Donaciones { get; private set; }
+        public double Donaciones { get; set; }
         public string ImagePath { get; set; }
 
         // Constructro vacio para serializacion
         public Contenido() : base()
         {
-            Visualizaciones = new List<Visualizacion>();
-            Likes = new List<Like>();
-            Comentarios = new List<string>();
-            Donaciones = 0.0;
+
         }
 
         public Contenido(string titulo, string descripcion, string idCreador, string imagePath)
@@ -107,7 +104,7 @@ namespace DonacionesCreadores.clases
 
         public override string ToString()
         {
-            return $"Contenido {{ Titulo = {Titulo}, Descripcion = {Descripcion}, Creador = {IdCreador}, " +
+            return $"Contenido {{Id = {Id} Titulo = {Titulo}, Descripcion = {Descripcion}, Creador = {IdCreador}, " +
                    $"Visualizaciones = {Visualizaciones.Count}, Likes = {Likes.Count}, Comentarios = {Comentarios.Count}, " +
                    $"Donaciones = {Donaciones} }}";
         }

@@ -108,7 +108,12 @@ namespace DonacionesCreadores.dao
             var creadorDao = new GenericDao<CreadorContenido>("creadorContenido.json");
             List<CreadorContenido> creadores = creadorDao.Cargar();
 
-            return creadores.Find(c => c.Id == id);
+            // Buscamos al creador de contenido por ID
+            CreadorContenido creadorContenido;
+
+            creadorContenido = creadores.Find(c => c.Id == id);
+
+            return creadorContenido;
         }
 
         // Método para actualizar un creador de contenido
@@ -158,6 +163,9 @@ namespace DonacionesCreadores.dao
         // Método para actualizar contenido
         public static void ActualizarContenido(Contenido contenido)
         {
+            // Contenido a actualizar
+            Debug.WriteLine("Contenido a actualizar: " + contenido.ToString());
+
             var contenidoDao = new GenericDao<Contenido>("contenido.json");
             List<Contenido> contenidos = contenidoDao.Cargar();
 
