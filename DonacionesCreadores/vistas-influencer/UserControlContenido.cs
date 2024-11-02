@@ -254,6 +254,42 @@ namespace DonacionesCreadores.vistas_influencer
             }
         }
 
+        private void btnOptions_Click(object sender, EventArgs e)
+        {
+            // Abrimos el context menu strip
+
+            contextMenuStrip1.Show(btnOptions, new Point(0, btnOptions.Height));
+        }
+
+        private void contextMenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            // Obtenemos el item seleccionado
+            ToolStripItem item = e.ClickedItem;
+
+            // Verificamos si el item es el de eliminar
+            if (item.Text == "Eliminar")
+            {
+                // Eliminamos el contenido
+                try
+                {
+                    Dao.EliminarContenido(_id);
+                    // Actualizamos el flowLayoutPanel
+                    _homeInfluencerForm.LoadContent();
+
+                    // Mostramos mensaje de exito
+                    MessageBox.Show("Contenido eliminado con exito", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine("Error al eliminar el contenido: " + ex.Message);
+                }
+            } else if (item.Text == "Editar")
+            {
+                // Abrimos la ventana de editar contenido
+            }
+
+        }
+
         [Category("Custom Props")]
         public string Titulo
         {

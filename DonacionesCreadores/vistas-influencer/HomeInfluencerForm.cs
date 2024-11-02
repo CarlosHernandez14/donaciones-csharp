@@ -88,5 +88,30 @@ namespace DonacionesCreadores.vistas_influencer
             }
 
         }
+
+        private void buttonProfile_Click(object sender, EventArgs e)
+        {
+            // Desplegamos el context menu en la posición del botón
+            contextMenuStrip1.Show(buttonProfile, new Point(0, buttonProfile.Height));
+        }
+
+        private void contextMenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            // Obtenemos el item seleccionado
+            ToolStripItem item = e.ClickedItem;
+            if (item != null)
+            {
+                // Verificamos si el item es el de cerrar sesión
+                if (item.Text == "Cerrar sesion")
+                {
+                    // Cerramos la sesión
+                    this.Close();
+
+                    // Mostramos la ventana de login
+                    LoginForm loginForm = new();
+                    loginForm.Show();
+                }
+            }
+        }
     }
 }

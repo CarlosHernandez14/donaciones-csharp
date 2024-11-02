@@ -187,6 +187,16 @@ namespace DonacionesCreadores.dao
             var contenidoDao = new GenericDao<Contenido>("contenido.json");
             List<Contenido> contenidos = contenidoDao.Cargar();
 
+            // Cargamos lo creadores de contenido para eliminar el contenido de su lista
+            var creadorDao = new GenericDao<CreadorContenido>("creadorContenido.json");
+            List<CreadorContenido> creadores = creadorDao.Cargar();
+
+            foreach (var creador in creadores)
+            {
+                creador.Contenidos.RemoveAll(c => c.Id == idContenido);
+                creadorDao.Guardar(creadores);
+            }
+
             contenidos.RemoveAll(c => c.Id == idContenido);
             contenidoDao.Guardar(contenidos);
         }

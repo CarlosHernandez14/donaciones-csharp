@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             flowLayoutPanel1 = new FlowLayoutPanel();
             pictureBox1 = new PictureBox();
             labelUsername = new Label();
@@ -42,11 +43,15 @@
             btnComment = new Button();
             btnVer = new Button();
             btnDonar = new Button();
+            contextMenuStrip1 = new ContextMenuStrip(components);
+            eliminarToolStripMenuItem = new ToolStripMenuItem();
+            editarToolStripMenuItem = new ToolStripMenuItem();
             flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureImage).BeginInit();
             flowLayoutPanel2.SuspendLayout();
+            contextMenuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -113,6 +118,7 @@
             btnOptions.TabIndex = 0;
             btnOptions.Text = "...";
             btnOptions.UseVisualStyleBackColor = true;
+            btnOptions.Click += btnOptions_Click;
             // 
             // labelTittle
             // 
@@ -213,6 +219,25 @@
             btnDonar.UseVisualStyleBackColor = true;
             btnDonar.Click += btnDonar_Click;
             // 
+            // contextMenuStrip1
+            // 
+            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { eliminarToolStripMenuItem, editarToolStripMenuItem });
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(181, 70);
+            contextMenuStrip1.ItemClicked += contextMenuStrip1_ItemClicked;
+            // 
+            // eliminarToolStripMenuItem
+            // 
+            eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
+            eliminarToolStripMenuItem.Size = new Size(180, 22);
+            eliminarToolStripMenuItem.Text = "Eliminar";
+            // 
+            // editarToolStripMenuItem
+            // 
+            editarToolStripMenuItem.Name = "editarToolStripMenuItem";
+            editarToolStripMenuItem.Size = new Size(180, 22);
+            editarToolStripMenuItem.Text = "Editar";
+            // 
             // UserControlContenido
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -232,6 +257,7 @@
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureImage).EndInit();
             flowLayoutPanel2.ResumeLayout(false);
+            contextMenuStrip1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -252,5 +278,8 @@
         private Button btnComment;
         private Button btnVer;
         private Button btnDonar;
+        private ContextMenuStrip contextMenuStrip1;
+        private ToolStripMenuItem eliminarToolStripMenuItem;
+        private ToolStripMenuItem editarToolStripMenuItem;
     }
 }

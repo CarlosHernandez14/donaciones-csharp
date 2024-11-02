@@ -28,25 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             panel1 = new Panel();
+            buttonProfile = new Button();
             btnPublicaciones = new Button();
             label1 = new Label();
             panel2 = new Panel();
             btnAddContent = new Button();
             containerPosts = new FlowLayoutPanel();
+            contextMenuStrip1 = new ContextMenuStrip(components);
+            cerrarSesionToolStripMenuItem = new ToolStripMenuItem();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            contextMenuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.Orange;
+            panel1.Controls.Add(buttonProfile);
             panel1.Controls.Add(btnPublicaciones);
             panel1.Controls.Add(label1);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(225, 526);
             panel1.TabIndex = 0;
+            // 
+            // buttonProfile
+            // 
+            buttonProfile.BackColor = Color.Orange;
+            buttonProfile.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonProfile.ForeColor = Color.White;
+            buttonProfile.Image = Properties.Resources.icon_profile_big;
+            buttonProfile.ImageAlign = ContentAlignment.MiddleLeft;
+            buttonProfile.Location = new Point(0, 450);
+            buttonProfile.Name = "buttonProfile";
+            buttonProfile.Size = new Size(225, 76);
+            buttonProfile.TabIndex = 2;
+            buttonProfile.Text = "Perfil";
+            buttonProfile.UseVisualStyleBackColor = false;
+            buttonProfile.Click += buttonProfile_Click;
             // 
             // btnPublicaciones
             // 
@@ -103,6 +124,19 @@
             containerPosts.Size = new Size(686, 448);
             containerPosts.TabIndex = 2;
             // 
+            // contextMenuStrip1
+            // 
+            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { cerrarSesionToolStripMenuItem });
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(181, 48);
+            contextMenuStrip1.ItemClicked += contextMenuStrip1_ItemClicked;
+            // 
+            // cerrarSesionToolStripMenuItem
+            // 
+            cerrarSesionToolStripMenuItem.Name = "cerrarSesionToolStripMenuItem";
+            cerrarSesionToolStripMenuItem.Size = new Size(180, 22);
+            cerrarSesionToolStripMenuItem.Text = "Cerrar sesion";
+            // 
             // HomeInfluencerForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -117,6 +151,7 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
+            contextMenuStrip1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -128,5 +163,8 @@
         private Panel panel2;
         private Button btnAddContent;
         private FlowLayoutPanel containerPosts;
+        private Button buttonProfile;
+        private ContextMenuStrip contextMenuStrip1;
+        private ToolStripMenuItem cerrarSesionToolStripMenuItem;
     }
 }
