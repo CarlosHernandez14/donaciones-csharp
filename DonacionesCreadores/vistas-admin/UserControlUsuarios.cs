@@ -33,7 +33,26 @@ namespace DonacionesCreadores.vistas_admin
 
         private void btnPartner_Click(object sender, EventArgs e)
         {
+            // Lo hacemos partner
+            try
+            {
+                // Actualizamos el estado del influencer
+                this._influencer.Partner = !this._influencer.Partner;
 
+                // Actualizamos el influencer
+                Dao.ActualizarCreadorContenido(this._influencer);
+
+                MessageBox.Show(this.Influencer.Partner ? "Creador actualizado a partner" : "Partner eliminado");
+
+                // Actualizamos el texto del button
+                this.btnPartner.Text = this.Influencer.Partner ? "Deshacer Partner" : "Hacer Partner";
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Error al actualizar el influencer a partner: " + ex.Message);
+                MessageBox.Show("Error al actualizar el influencer a partner");
+            }
         }
 
         // Metodo para calcular el total de donaciones
@@ -47,7 +66,7 @@ namespace DonacionesCreadores.vistas_admin
                 // Variable para almacenar el total de donaciones
                 double totalDonations = 0;
 
-                // Recorremos los contenidos
+                // Recorremos los contenidoss
                 foreach (Contenido contenido in contenidos)
                 {
                     // Verificamos si el contenido pertenece al influencer
@@ -158,6 +177,15 @@ namespace DonacionesCreadores.vistas_admin
                 double averageViews = CalculateAverageViews();
                 labelViews.Text = averageViews.ToString();
 
+                // Verificamos si es partner
+                if (_influencer.Partner)
+                {
+                    btnPartner.Text = "Deshacer Partner";
+                }
+                else
+                {
+                    btnPartner.Text = "Hacer Partner";
+                }
 
             }
             catch (Exception ex)

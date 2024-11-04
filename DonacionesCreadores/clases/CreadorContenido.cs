@@ -14,6 +14,7 @@ namespace DonacionesCreadores.clases
         public List<Contenido> Contenidos { get; set; }
         public bool CuentaBloqueada { get; set; }
         public List<string> Suscriptores { get; set; } // Guarda el id de los usuarios suscritos
+        public bool Partner { get; set; } // Guarda si es partner o no
 
         // Constructor vacío para serialización
         public CreadorContenido() : base()
@@ -21,6 +22,7 @@ namespace DonacionesCreadores.clases
             Contenidos = new List<Contenido>();
             Suscriptores = new List<string>();
             CuentaBloqueada = false;
+            Partner = false;
         }
 
         public CreadorContenido(string idUsuario, string nombre, string email, string contrasena)
@@ -29,6 +31,18 @@ namespace DonacionesCreadores.clases
             Contenidos = new List<Contenido>();
             Suscriptores = new List<string>();
             CuentaBloqueada = false;
+            Partner = false;
+        }
+
+        // Metodo con todos los datos
+        public CreadorContenido(string idUsuario, string nombre, string email, string contrasena,
+                                List<Contenido> contenidos, bool cuentaBloqueada, List<string> suscriptores, bool partner)
+            : base(idUsuario, nombre, email, contrasena)
+        {
+            Contenidos = contenidos;
+            Suscriptores = suscriptores;
+            CuentaBloqueada = cuentaBloqueada;
+            Partner = partner;
         }
 
         public void CrearContenido(string titulo, string descripcion, string imagePath)
