@@ -297,7 +297,7 @@
             // comboInfluencer
             // 
             comboInfluencer.FormattingEnabled = true;
-            comboInfluencer.Items.AddRange(new object[] { "Usuario", "CreadorContenido" });
+            comboInfluencer.Items.AddRange(new object[] { "Usuario", "CreadorContenido", "Administrador" });
             comboInfluencer.Location = new Point(53, 371);
             comboInfluencer.Name = "comboInfluencer";
             comboInfluencer.Size = new Size(219, 23);

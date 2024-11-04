@@ -1,5 +1,6 @@
 using DonacionesCreadores.clases;
 using DonacionesCreadores.dao;
+using DonacionesCreadores.vistas_admin;
 using DonacionesCreadores.vistas_influencer;
 using System.Diagnostics;
 
@@ -55,8 +56,14 @@ namespace DonacionesCreadores
                 // Verificamos el tipo de usuario
                 if (usuario is Administrador)
                 {
-                    // Abrir el formulario de administrador
-                    
+                    // Creamos el usuario como administrador
+                    Administrador administrador = (Administrador)usuario;
+                    // Abrimos el formulario de administrador
+                    HomeAdminFrom homeAdminFrom = new HomeAdminFrom(administrador);
+                    homeAdminFrom.Show();
+                    // Cerramos el formulario actual
+                    this.Hide();
+
                 }
                 else if (usuario is CreadorContenido)
                 {
@@ -71,7 +78,7 @@ namespace DonacionesCreadores
                 else
                 {
                     // Abrir el formulario de usuario
-                    HomeForm homeForm = new HomeForm();
+                    HomeForm homeForm = new HomeForm(usuario);
                     homeForm.Show();
                     // Cerrar el formulario actual
                     this.Hide();

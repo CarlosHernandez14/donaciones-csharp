@@ -134,6 +134,13 @@ namespace DonacionesCreadores.dao
             creadorDao.Guardar(creadores);
         }
 
+        // Método para obtener todos los creadores de contenido
+        public static List<CreadorContenido> ObtenerCreadoresContenido()
+        {
+            var creadorDao = new GenericDao<CreadorContenido>("creadorContenido.json");
+            return creadorDao.Cargar();
+        }
+
         // Método para guardar un administrador
         public static void GuardarAdministrador(Administrador administrador)
         {

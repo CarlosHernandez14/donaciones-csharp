@@ -1,5 +1,6 @@
 ﻿using DonacionesCreadores.clases;
 using DonacionesCreadores.dao;
+using DonacionesCreadores.vistas_admin;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,6 +48,8 @@ namespace DonacionesCreadores.vistas_influencer
         private List<Visualizacion> _visualizacionesList;
         private List<string> _commentsList;
         private HomeInfluencerForm _homeInfluencerForm;
+        private HomeForm _homeForm;
+        private HomeAdminFrom _homeAdminForm;
         private Usuario _usuario;
 
         private void UserControlContenido_Load(object sender, EventArgs e)
@@ -274,7 +277,18 @@ namespace DonacionesCreadores.vistas_influencer
                 {
                     Dao.EliminarContenido(_id);
                     // Actualizamos el flowLayoutPanel
-                    _homeInfluencerForm.LoadContent();
+                    if (HomeForm != null)
+                    {
+                        HomeForm.Load_Content();
+                    }
+                    else if (HomeInfluencerForm != null)
+                    {
+                        HomeInfluencerForm.LoadContent();
+                    }
+                    else
+                    {
+                        HomeAdminForm?.CargarContenido();
+                    }
 
                     // Mostramos mensaje de exito
                     MessageBox.Show("Contenido eliminado con exito", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -365,6 +379,20 @@ namespace DonacionesCreadores.vistas_influencer
         {
             get { return _donaciones; }
             set { _donaciones = value; }
+        }
+
+        [Category("Custom Props")]
+        public HomeForm HomeForm
+        {
+            get { return _homeForm; }
+            set { _homeForm = value; }
+        }
+
+        [Category("Custom Props")]
+        public HomeAdminFrom HomeAdminForm
+        {
+            get { return _homeAdminForm; }
+            set { _homeAdminForm = value; }
         }
 
 
