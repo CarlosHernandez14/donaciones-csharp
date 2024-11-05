@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -157,6 +158,58 @@ namespace DonacionesCreadores.vistas_admin
         {
             // Cargamos los contenidos
             CargarContenido();
+        }
+
+        private void btnPDF_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Obtenemos los creadores de contenido 
+                List<CreadorContenido> creadores = Dao.ObtenerCreadoresContenido();
+
+                // Filtramos los que son partnerns
+                List<CreadorContenido> partners = creadores.Where(c => c.Partner).ToList();
+
+                // Creamos el PDF
+                DataExport.GenerarReportePDF(partners);
+
+                MessageBox.Show("Reporte de los partners generado correctamente");
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Error al generar el PDF: " + ex.Message);
+                MessageBox.Show("Error al generar el PDF");
+            }
+        }
+
+        private void btnExcel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Obtenemos los creadores de contenido
+                List<CreadorContenido> creadores = Dao.ObtenerCreadoresContenido();
+
+                // Obtenemos todos los contenidos
+                List<Contenido> contenidos = Dao.ObtenerContenidos();
+
+                // Filtramos los contenidos del creador
+                foreach (CreadorContenido creador in creadores)
+                {
+                    creador.Contenidos = contenidos.Where(c => c.IdCreador == creador.Id).ToList();
+                }
+
+                // Generamos el Excel
+                DataExport.GenerarReporteExcelTopDonaciones(creadores);
+
+                MessageBox.Show("Reporte de los creadores de contenido generado correctamente");
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Error al generar el Excel: " + ex.Message);
+                MessageBox.Show("Error al generar el Excel");   
+
+            }
+
         }
     }
 }

@@ -151,6 +151,7 @@
             btnExcel.TabIndex = 2;
             btnExcel.Text = "Descargar Excel";
             btnExcel.UseVisualStyleBackColor = false;
+            btnExcel.Click += btnExcel_Click;
             // 
             // label2
             // 
@@ -173,6 +174,7 @@
             btnPDF.TabIndex = 0;
             btnPDF.Text = "Descargar PDF";
             btnPDF.UseVisualStyleBackColor = false;
+            btnPDF.Click += btnPDF_Click;
             // 
             // containerPosts
             // 
