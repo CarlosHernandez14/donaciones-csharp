@@ -11,12 +11,19 @@ namespace DonacionesCreadores.dao
 {
     public class Dao
     {
+
+        // Paths de los archivos JSON
+        private static readonly string USUARIO_PATH = "usuario.json";
+        private static readonly string CREADOR_CONTENIDO_PATH = "creadorContenido.json";
+        private static readonly string ADMINISTRADOR_PATH = "administrador.json";
+        private static readonly string CONTENIDO_PATH = "contenido.json";
+
         public Dao() { }
 
         // Método para verificar si el usuario existe
         public static Usuario VerificarUsuario(string correo, string contrasena)
         {
-            var usuarioDao = new GenericDao<Usuario>("usuario.json");
+            var usuarioDao = new GenericDao<Usuario>(USUARIO_PATH);
             List<Usuario> usuarios = usuarioDao.Cargar();
             // Imprimimos los usuarios cargados
             Debug.WriteLine("Usuarios:");
@@ -34,7 +41,7 @@ namespace DonacionesCreadores.dao
             }
 
             // Verificación en creadores de contenido
-            var creadorContenidoDao = new GenericDao<CreadorContenido>("creadorContenido.json");
+            var creadorContenidoDao = new GenericDao<CreadorContenido>(CREADOR_CONTENIDO_PATH);
             List<CreadorContenido> creadoresContenido = creadorContenidoDao.Cargar();
 
             // Imprimimos los creadores de contenido cargados
@@ -53,7 +60,7 @@ namespace DonacionesCreadores.dao
             }
 
             // Verificación en administradores
-            var administradorDao = new GenericDao<Administrador>("administrador.json");
+            var administradorDao = new GenericDao<Administrador>(ADMINISTRADOR_PATH);
             List<Administrador> administradores = administradorDao.Cargar();
 
             // Imprimimos los administradores cargados
@@ -77,7 +84,7 @@ namespace DonacionesCreadores.dao
         // Método para guardar un usuario
         public static void GuardarUsuario(Usuario usuario)
         {
-            var usuarioDao = new GenericDao<Usuario>("usuario.json");
+            var usuarioDao = new GenericDao<Usuario>(USUARIO_PATH);
             List<Usuario> usuarios = usuarioDao.Cargar();
             usuario.Contrasena = Sha1Encrypt(usuario.Contrasena);
             usuarios.Add(usuario);
@@ -89,7 +96,7 @@ namespace DonacionesCreadores.dao
         {
             try
             {
-                var creadorDao = new GenericDao<CreadorContenido>("creadorContenido.json");
+                var creadorDao = new GenericDao<CreadorContenido>(CREADOR_CONTENIDO_PATH);
                 List<CreadorContenido> creadores = creadorDao.Cargar();
                 creadorContenido.Contrasena = Sha1Encrypt(creadorContenido.Contrasena);
                 creadores.Add(creadorContenido);
@@ -105,7 +112,7 @@ namespace DonacionesCreadores.dao
         // Método para obtener un creador de contenido por ID
         public static CreadorContenido ObtenerCreadorContenido(string id)
         {
-            var creadorDao = new GenericDao<CreadorContenido>("creadorContenido.json");
+            var creadorDao = new GenericDao<CreadorContenido>(CREADOR_CONTENIDO_PATH);
             List<CreadorContenido> creadores = creadorDao.Cargar();
 
             // Buscamos al creador de contenido por ID
@@ -119,7 +126,7 @@ namespace DonacionesCreadores.dao
         // Método para actualizar un creador de contenido
         public static void ActualizarCreadorContenido(CreadorContenido creadorContenido)
         {
-            var creadorDao = new GenericDao<CreadorContenido>("creadorContenido.json");
+            var creadorDao = new GenericDao<CreadorContenido>(CREADOR_CONTENIDO_PATH);
             List<CreadorContenido> creadores = creadorDao.Cargar();
 
             for (int i = 0; i < creadores.Count; i++)
@@ -137,14 +144,14 @@ namespace DonacionesCreadores.dao
         // Método para obtener todos los creadores de contenido
         public static List<CreadorContenido> ObtenerCreadoresContenido()
         {
-            var creadorDao = new GenericDao<CreadorContenido>("creadorContenido.json");
+            var creadorDao = new GenericDao<CreadorContenido>(CREADOR_CONTENIDO_PATH);
             return creadorDao.Cargar();
         }
 
         // Método para guardar un administrador
         public static void GuardarAdministrador(Administrador administrador)
         {
-            var adminDao = new GenericDao<Administrador>("administrador.json");
+            var adminDao = new GenericDao<Administrador>(ADMINISTRADOR_PATH);
             List<Administrador> administradores = adminDao.Cargar();
             administrador.Contrasena = Sha1Encrypt(administrador.Contrasena);
             administradores.Add(administrador);
@@ -154,7 +161,7 @@ namespace DonacionesCreadores.dao
         // Método para guardar contenido
         public static void GuardarContenido(Contenido contenido)
         {
-            var contenidoDao = new GenericDao<Contenido>("contenido.json");
+            var contenidoDao = new GenericDao<Contenido>(CONTENIDO_PATH);
             List<Contenido> contenidos = contenidoDao.Cargar();
             contenidos.Add(contenido);
             contenidoDao.Guardar(contenidos);
@@ -163,7 +170,7 @@ namespace DonacionesCreadores.dao
         // Método para obtener todos los contenidos
         public static List<Contenido> ObtenerContenidos()
         {
-            var contenidoDao = new GenericDao<Contenido>("contenido.json");
+            var contenidoDao = new GenericDao<Contenido>(CONTENIDO_PATH);
             return contenidoDao.Cargar();
         }
 
@@ -173,7 +180,7 @@ namespace DonacionesCreadores.dao
             // Contenido a actualizar
             Debug.WriteLine("Contenido a actualizar: " + contenido.ToString());
 
-            var contenidoDao = new GenericDao<Contenido>("contenido.json");
+            var contenidoDao = new GenericDao<Contenido>(CONTENIDO_PATH);
             List<Contenido> contenidos = contenidoDao.Cargar();
 
             for (int i = 0; i < contenidos.Count; i++)
@@ -191,11 +198,11 @@ namespace DonacionesCreadores.dao
         // Método para eliminar contenido
         public static void EliminarContenido(string idContenido)
         {
-            var contenidoDao = new GenericDao<Contenido>("contenido.json");
+            var contenidoDao = new GenericDao<Contenido>(CONTENIDO_PATH);
             List<Contenido> contenidos = contenidoDao.Cargar();
 
             // Cargamos lo creadores de contenido para eliminar el contenido de su lista
-            var creadorDao = new GenericDao<CreadorContenido>("creadorContenido.json");
+            var creadorDao = new GenericDao<CreadorContenido>(CREADOR_CONTENIDO_PATH);
             List<CreadorContenido> creadores = creadorDao.Cargar();
 
             foreach (var creador in creadores)
