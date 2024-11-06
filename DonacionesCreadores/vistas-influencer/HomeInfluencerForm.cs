@@ -78,7 +78,7 @@ namespace DonacionesCreadores.vistas_influencer
                 }
 
                 // Refrescamos el contenedor
-                //containerPosts.Refresh();
+                containerPosts.Refresh();
 
             }
             catch (Exception ex)
@@ -112,6 +112,12 @@ namespace DonacionesCreadores.vistas_influencer
                     loginForm.Show();
                 }
             }
+        }
+
+        private void btnPublicaciones_Click(object sender, EventArgs e)
+        {
+            // Recargamos los contenidos
+            LoadContent();
         }
     }
 }

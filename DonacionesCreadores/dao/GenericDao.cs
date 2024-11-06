@@ -20,8 +20,9 @@ namespace DonacionesCreadores.dao
             this.filePath = filePath;
             this.options = new JsonSerializerOptions
             {
-                PropertyNameCaseInsensitive = true,
-                WriteIndented = true
+                PropertyNameCaseInsensitive = true, // Para aceptar mayúsculas y minúsculas al deserializar
+                WriteIndented = true, // Para formatear el JSON de manera legible
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase // Asegura que los nombres se guarden en camelCase
             };
         }
 

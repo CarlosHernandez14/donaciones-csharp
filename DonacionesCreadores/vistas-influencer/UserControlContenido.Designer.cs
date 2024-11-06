@@ -190,6 +190,7 @@
             btnComment.Text = "Comentarios(0)";
             btnComment.TextAlign = ContentAlignment.MiddleRight;
             btnComment.UseVisualStyleBackColor = true;
+            btnComment.Click += btnComment_Click;
             // 
             // btnVer
             // 
@@ -223,19 +224,19 @@
             // 
             contextMenuStrip1.Items.AddRange(new ToolStripItem[] { eliminarToolStripMenuItem, editarToolStripMenuItem });
             contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(181, 70);
+            contextMenuStrip1.Size = new Size(118, 48);
             contextMenuStrip1.ItemClicked += contextMenuStrip1_ItemClicked;
             // 
             // eliminarToolStripMenuItem
             // 
             eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            eliminarToolStripMenuItem.Size = new Size(180, 22);
+            eliminarToolStripMenuItem.Size = new Size(117, 22);
             eliminarToolStripMenuItem.Text = "Eliminar";
             // 
             // editarToolStripMenuItem
             // 
             editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            editarToolStripMenuItem.Size = new Size(180, 22);
+            editarToolStripMenuItem.Size = new Size(117, 22);
             editarToolStripMenuItem.Text = "Editar";
             // 
             // UserControlContenido

@@ -297,10 +297,33 @@ namespace DonacionesCreadores.vistas_influencer
                 {
                     Debug.WriteLine("Error al eliminar el contenido: " + ex.Message);
                 }
-            } else if (item.Text == "Editar")
+            }
+            else if (item.Text == "Editar")
             {
                 // Abrimos la ventana de editar contenido
             }
+
+        }
+
+        private void btnComment_Click(object sender, EventArgs e)
+        {
+            // Creamos un objeto de contenido con los datos
+            Contenido contenido = new Contenido(
+                _id, 
+                _titulo, 
+                _descripcion, 
+                _idCreador, 
+                _visualizacionesList, 
+                _likeList, 
+                _commentsList, 
+                _donaciones, 
+                _imagePath
+             );
+
+            // Abrimos la ventana de comentarios
+            CommentsForm commentsForm = new CommentsForm(contenido, this.Usuario);
+
+            commentsForm.Show();
 
         }
 

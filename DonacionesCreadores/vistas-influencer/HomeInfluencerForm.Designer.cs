@@ -83,6 +83,7 @@
             btnPublicaciones.TabIndex = 1;
             btnPublicaciones.Text = "Publicaciones";
             btnPublicaciones.UseVisualStyleBackColor = false;
+            btnPublicaciones.Click += btnPublicaciones_Click;
             // 
             // label1
             // 
